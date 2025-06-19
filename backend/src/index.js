@@ -28,9 +28,6 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-app.use(express.json({ limit: '10mb' })); // Allows JSON body up to 10MB
-app.use(express.urlencoded({ extended: true, limit: '10mb' })); // Allows URL-encoded body up to 10MB
-
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
